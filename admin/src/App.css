@@ -1,0 +1,285 @@
+/* Thay đổi thanh cuộn dọc */
+::-webkit-scrollbar {
+  width: 7px; /* Điều chỉnh độ rộng của thanh cuộn dọc */
+}
+
+/* Thay đổi phần thân thanh cuộn */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Màu sắc của thanh cuộn */
+  border-radius: 10px; /* Để làm thanh cuộn tròn hơn */
+}
+
+/* Thay đổi phần trượt của thanh cuộn */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Màu nền cho phần trượt */
+  border-radius: 10px; /* Tạo cạnh tròn cho phần trượt */
+}
+
+.NavBar {
+    background-color: rgb(7, 122, 103);
+    color: aliceblue;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 17rem;
+    padding-right: 17rem;
+    height: 2.25rem;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    position: fixed; /* Chỉnh lại thành fixed để luôn hiển thị */
+    top: 0; /* Đảm bảo nó luôn ở trên cùng */
+    left: 0;
+    right: 0;
+}
+.sticky-navbar {
+  position: sticky;
+  top: 2.25rem; /* Điều này sẽ giúp sticky-navbar hiển thị ngay dưới NavBar */
+  z-index: 999; /* Đảm bảo nó nằm dưới NavBar */
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  background-color: white; /* Đảm bảo sticky-navbar có nền trắng để không bị trong suốt */
+  margin-bottom:36px;
+  box-sizing: border-box;
+}
+.border-top-dashed {
+    border-top: 3px solid transparent;
+    background-image: repeating-linear-gradient(50deg, rgba(7, 122, 103) 0 10px, orange 10px 20px);
+    background-size: 100% 0.02px; 
+    margin-top: 3px;
+  }
+  .listtopcontent {
+    display: flex;
+    align-items: center;  
+    gap: 5px;                       
+    width: 100%;  
+    color: green;                       
+    padding-left: 1rem;                   
+    padding-right: 1rem;                   
+    padding-top: 0.5rem;                     
+    padding-bottom: 0.5rem;                 
+    border-bottom: 1px solid #e5e7eb;      
+    cursor: pointer;                        
+    transition: background-color 0.2s, color 0.2s; 
+  }
+  
+  .listtopcontent:hover {
+    background-color: #f3f4f6;               
+    color: #e4500b;                      
+  }
+  
+  .listtopcontent.dark {
+    border-color: #0067f8;                   
+  }
+  .midtopcontent{
+    display: flex;                
+    gap: 2px;                 
+    align-items: center;
+  }
+  .box-item-righttop{
+    border-radius: 5px;
+    width: 125px;
+    height: 150px;
+    border-width: 2px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+  }
+  .box-item-righttop img{
+    width: 80px;
+    height: 80px;
+  }
+  .box-item-righttop h4 {
+    font-weight: 700;     
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+  }
+  .box-item-righttop p{
+    font-size: 13px;
+    font-style: italic;
+  }
+  .ContentMid1{
+    border-width: 1px;
+    display: flex;              
+    flex-wrap: wrap;      
+    gap: 20px; 
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+  }
+  .ContentMid1 .container {
+
+    grid-template-columns: repeat(5,1fr);
+    display: grid;
+    gap: 25px;                     
+    width: 100%;
+    
+  }
+
+  .Content-alignedTop{
+    display: grid;
+    justify-content: space-between;
+    padding-top: 1.5rem; 
+    padding-left: 17rem;  
+    padding-right: 17rem; 
+    grid-template-columns: 192px 825px 260px;
+  }
+  .Content-alignedMid{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem; 
+    padding-left: 17rem;  
+    padding-right: 17rem;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 3; }
+    50% { opacity: 0; }
+  }
+  .valentine{
+    text-transform: uppercase;
+    color: #ffb30ff5;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 30px;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.box-item{
+  height: 350px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.bannerImg{
+  width: 825px;
+}
+
+
+/* Giữ thanh cuộn dọc luôn hiển thị */
+body {
+  overflow-y: scroll; /* Đảm bảo thanh cuộn dọc luôn xuất hiện */
+}
+
+/* Giữ thanh cuộn dọc khi mở modal */
+body.modal-open {
+  overflow-y: scroll; /* Giữ thanh cuộn dọc khi mở modal */
+}
+/* Map */
+.leaflet-popup-content {
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Làm rõ chữ */
+}
+.leaflet-container {
+  image-rendering: crisp-edges; 
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0); 
+  backface-visibility: hidden;
+
+}
+
+.chat-message-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99999; /* Đảm bảo cao hơn mọi phần tử khác */
+  background: white; /* Có nền để không bị trong suốt */
+  border: 1px solid #ccc; /* Viền giúp tách biệt */
+  border-radius: 10px; /* Bo góc đẹp hơn */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng để nổi bật */
+}
+
+@media (max-width: 1440px) {
+  .ContentMid1 .container {
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+  }
+  .Content-alignedMid{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem; 
+  }
+  .Content-alignedTop{
+    display: grid;
+    justify-content: space-between;
+    padding-top: 1.5rem; 
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-template-columns: 192px 842px 270px;
+  }
+
+  .midtopcontent{
+    display: flex;                
+    gap: 5px;                 
+    align-items: center;
+    white-space: nowrap;
+  }
+  .bannerImg{
+    width: 842px;
+    height:350 ;
+  }
+  .HCM{
+    display: none;
+  }
+  .contentTextTop{
+    display: flex;
+    justify-content: space-between;
+    padding:0 3px 3px 3px;
+  }
+  .Content-alignedMid{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem; 
+    padding-left: 20px;
+    padding-right: 20px
+  }
+  .box-item{
+    height: 350px;
+    width: auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+  .ContentMid1{
+    border-width: 1px;
+    display: flex;              
+    flex-wrap: wrap;      
+    gap: 20px; 
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 739px){
+  .LeftTopContent{
+    display: none;
+  }
+  .RightTopContent{
+    display: none;
+  }
+  .Content-alignedMid{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem; 
+    width: 100%;
+  
+  }
+  .bannerImg{
+    width: 380px;
+  }
+
+}
